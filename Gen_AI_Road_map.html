@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative & Agentic AI with Python - 24-Week Study Roadmap</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.9);
+        }
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+        .completed-card {
+            background: rgba(16, 185, 129, 0.06) !important;
+            border-color: rgba(16, 185, 129, 0.35) !important;
+        }
+        .dark .completed-card {
+            background: rgba(6, 78, 59, 0.22) !important;
+            border-color: rgba(16, 185, 129, 0.4) !important;
+        }
+        .accordion-content {
+            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200">
+
+    <header class="sticky top-0 z-40 glass-panel border-b border-slate-200 dark:border-slate-800 px-4 lg:px-8 py-3.5 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-emerald-500/20">
+                    <i class="fa-solid fa-robot text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight tracking-tight text-slate-900 dark:text-white">GenAI & Agentic AI Masterclass</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">24-Week Concept Syllabus & Persistent Study Dashboard</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button id="exportModalBtn" class="px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 transition flex items-center gap-2 border border-emerald-200 dark:border-emerald-800/50">
+                    <i class="fa-solid fa-floppy-disk text-emerald-500"></i>
+                    <span class="hidden sm:inline">Backup / Restore</span>
+                </button>
+
+                <button id="snippetModalBtn" class="px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 transition flex items-center gap-2 border border-indigo-200 dark:border-indigo-800/50">
+                    <i class="fa-solid fa-code text-indigo-500"></i>
+                    <span class="hidden md:inline">Cheat Sheet</span>
+                </button>
+
+                <button id="themeToggleBtn" class="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Toggle Theme">
+                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-lg text-amber-400"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 lg:px-8 py-6 space-y-6">
+
+        <section class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+            
+            <!-- Overall Progress Gauge -->
+            <div class="lg:col-span-2 glass-panel p-5 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-emerald-500/10 dark:bg-emerald-500/5 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <span class="text-xs font-semibold tracking-wider uppercase text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800/60 px-2.5 py-0.5 rounded-full">
+                                <i class="fa-solid fa-database mr-1"></i> Auto-Saved Progress
+                            </span>
+                            <h2 class="text-2xl font-bold mt-2 text-slate-900 dark:text-white">Curriculum Completion</h2>
+                        </div>
+                        <div class="text-right">
+                            <span id="overallPercentage" class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">0%</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">State persists automatically in local storage across browser sessions.</p>
+                </div>
+
+                <div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-3 overflow-hidden p-0.5">
+                        <div id="overallProgressBar" class="bg-gradient-to-r from-emerald-500 via-teal-500 to-indigo-600 h-2 rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
+                    </div>
+                    <div class="flex justify-between items-center text-xs text-slate-500 dark:text-slate-400 mt-2">
+                        <span><strong id="completedTasksCount" class="text-slate-800 dark:text-slate-200">0</strong> / <span id="totalTasksCount">168</span> Concepts</span>
+                        <span id="weekendRevisionCounter">0 / 24 Weekend Revisions</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Commitment -->
+            <div class="glass-panel p-5 rounded-2xl shadow-sm flex flex-col justify-between">
+                <div class="flex items-center justify-between text-slate-500 dark:text-slate-400">
+                    <span class="text-xs font-medium uppercase tracking-wider">Plan Duration</span>
+                    <i class="fa-solid fa-calendar-days text-indigo-500"></i>
+                </div>
+                <div class="my-3">
+                    <div class="text-2xl font-bold text-slate-900 dark:text-white">6 Months</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">24 Weeks | 168 Daily Modules</div>
+                </div>
+                <div class="text-xs font-medium text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>1-2 Hours/Day + Weekend Lab</span>
+                </div>
+            </div>
+
+            <!-- Current Active Focus -->
+            <div class="glass-panel p-5 rounded-2xl shadow-sm flex flex-col justify-between">
+                <div class="flex items-center justify-between text-slate-500 dark:text-slate-400">
+                    <span class="text-xs font-medium uppercase tracking-wider">Active Target</span>
+                    <i class="fa-solid fa-bullseye text-emerald-500"></i>
+                </div>
+                <div class="my-3">
+                    <div class="text-sm font-bold text-slate-900 dark:text-white truncate" id="currentFocusTitle">Month 1: Fundamentals</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 truncate" id="activeWeekSub">Week 1: Python Core</div>
+                </div>
+                <button id="resetProgressBtn" class="text-xs font-medium text-rose-600 hover:text-rose-700 dark:text-rose-400 dark:hover:text-rose-300 flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span>Reset All Local Storage</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="glass-panel p-4 rounded-2xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="relative w-full md:w-80">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                <input type="text" id="searchInput" placeholder="Search concepts (e.g. PyTorch, RAG, MCP)..." 
+                    class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:text-white placeholder-slate-400 transition">
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+                <div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-900 p-1 rounded-xl border border-slate-200 dark:border-slate-800 overflow-x-auto">
+                    <button data-filter="all" class="filter-btn active-filter px-3 py-1.5 text-xs font-medium rounded-lg bg-emerald-500 text-white transition whitespace-nowrap">
+                        All Topics
+                    </button>
+                    <button data-filter="pending" class="filter-btn px-3 py-1.5 text-xs font-medium rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition whitespace-nowrap">
+                        Pending
+                    </button>
+                    <button data-filter="completed" class="filter-btn px-3 py-1.5 text-xs font-medium rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition whitespace-nowrap">
+                        Completed
+                    </button>
+                    <button data-filter="weekend" class="filter-btn px-3 py-1.5 text-xs font-medium rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition whitespace-nowrap">
+                        <i class="fa-solid fa-star text-amber-500 mr-1"></i> Weekend Revisions
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-1.5 ml-auto md:ml-0">
+                    <button id="expandAllBtn" class="px-2.5 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Expand All Weeks">
+                        <i class="fa-solid fa-angles-down"></i> Expand All
+                    </button>
+                    <button id="collapseAllBtn" class="px-2.5 py-1.5 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Collapse All Weeks">
+                        <i class="fa-solid fa-angles-up"></i> Collapse All
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <div class="flex items-center gap-2 overflow-x-auto pb-2 border-b border-slate-200 dark:border-slate-800" id="monthTabsNav">
+                <!-- Rendered dynamically -->
+            </div>
+
+            <div id="curriculumContainer" class="space-y-6">
+                <!-- Curriculum content rendered dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <div id="snippetModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+        <div class="glass-panel w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+            <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-code text-indigo-500 text-lg"></i>
+                    <h3 class="font-bold text-lg text-slate-900 dark:text-white">GenAI & Agentic Python Cheat Sheet</h3>
+                </div>
+                <button id="closeSnippetModal" class="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-white transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto space-y-6 text-sm">
+                <div>
+                    <h4 class="font-semibold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                        1. Structured Output with Pydantic Schema & Tool Calling
+                    </h4>
+                    <pre class="bg-slate-950 text-slate-100 p-4 rounded-xl code-font text-xs overflow-x-auto"><code>from pydantic import BaseModel, Field
+from openai import OpenAI
+
+class ResearchSummary(BaseModel):
+    title: str = Field(description="Main title of the summary")
+    key_takeaways: list[str] = Field(description="List of 3 primary insights")
+    confidence_score: float = Field(description="Confidence rating between 0 and 1")
+
+client = OpenAI()
+response = client.beta.chat.completions.parse(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Summarize recent advances in Agentic AI workflows."}],
+    response_format=ResearchSummary,
+)
+print(response.choices[0].message.parsed)</code></pre>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                        2. LangGraph ReAct State Graph Loop
+                    </h4>
+                    <pre class="bg-slate-950 text-slate-100 p-4 rounded-xl code-font text-xs overflow-x-auto"><code>from typing import TypedDict, Annotated
+from langgraph.graph import StateGraph, START, END
+from langgraph.graph.message import add_messages
+
+class AgentState(TypedDict):
+    messages: Annotated[list, add_messages]
+
+def call_model(state: AgentState):
+    # Agent logic execution node
+    return {"messages": [("assistant", "Observation verified. Action completed.")]}
+
+builder = StateGraph(AgentState)
+builder.add_node("agent", call_model)
+builder.add_edge(START, "agent")
+builder.add_edge("agent", END)
+graph = builder.compile()</code></pre>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                        3. FAISS Vector Search Implementation
+                    </h4>
+                    <pre class="bg-slate-950 text-slate-100 p-4 rounded-xl code-font text-xs overflow-x-auto"><code>import faiss
+import numpy as np
+
+dimension = 1536 # OpenAI embedding dimensions
+index = faiss.IndexFlatL2(dimension)
+
+# Add embeddings array
+vectors = np.random.random((100, dimension)).astype('float32')
+index.add(vectors)
+
+# Query top k nearest neighbors
+k = 3
+query_vector = np.random.random((1, dimension)).astype('float32')
+distances, indices = index.search(query_vector, k)
+print("Indices of nearest chunks:", indices)</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="exportModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+        <div class="glass-panel w-full max-w-md rounded-2xl shadow-2xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+                <h3 class="font-bold text-lg text-slate-900 dark:text-white">Backup & Restore Progress</h3>
+                <button id="closeExportModal" class="p-1 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            
+            <p class="text-xs text-slate-500 dark:text-slate-400">Export your completed study checklist as a JSON file or restore your progress from an existing backup.</p>
+            
+            <div class="space-y-3 pt-2">
+                <button id="downloadJsonBtn" class="w-full py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-xl text-sm transition flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20">
+                    <i class="fa-solid fa-file-export"></i> Download Progress JSON
+                </button>
+                
+                <div class="relative">
+                    <input type="file" id="importJsonInput" accept=".json" class="hidden">
+                    <button onclick="document.getElementById('importJsonInput').click()" class="w-full py-2.5 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-medium rounded-xl text-sm transition flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700">
+                        <i class="fa-solid fa-file-import"></i> Restore from JSON File
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const curriculumData = [
+            {
+                month: 1,
+                title: "Month 1: Python Core & Machine Learning Foundations",
+                description: "Master Python syntax, advanced functional paradigms, numerical computing, data preprocessing, and ML pipelines.",
+                weeks: [
+                    {
+                        week: 1,
+                        title: "Week 1: Python Fundamentals - Core Syntax, Data Types & Control Flow",
+                        days: [
+                            { day: 1, topic: "Python Syntax, Indentation & Execution Model", detail: "Understand Python memory model, dynamic typing, code structure, and script execution." },
+                            { day: 2, topic: "Variables, Primitive Data Types & Mutability", detail: "Explore Integers, Floats, Strings, Booleans, immutability rules, and memory references." },
+                            { day: 3, topic: "Lists, Tuples, Sets & Dictionaries", detail: "Master composite data structures, hash tables, key lookup complexity, and mutability." },
+                            { day: 4, topic: "Operators & Expressive Conditionals", detail: "Implement arithmetic, bitwise, logical, membership operators, and short-circuit evaluation." },
+                            { day: 5, topic: "Control Flow: Loops & Iteration Protocols", detail: "Master for and while loops, break, continue, else-clauses, and pass statements." },
+                            { day: 6, topic: "Modules, Packages, Pip & Virtual Environments", detail: "Manage dependencies, import resolution, pyproject.toml, virtualenv, and pip." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 1 concepts. Complete core syntax quizzes and refactor code exercises.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 2,
+                        title: "Week 2: Python Advanced - Functions, Comprehensions, OOP & Decorators",
+                        days: [
+                            { day: 1, topic: "Functions, Default Parameters & Scope (LEGB)", detail: "Understand scope lookup rules, global/nonlocal keywords, and first-class functions." },
+                            { day: 2, topic: "Lambda Functions, *args and **kwargs", detail: "Use anonymous functions, positional packing, and keyword argument unpacking." },
+                            { day: 3, topic: "List, Dictionary & Set Comprehensions", detail: "Construct clean, memory-efficient collection comprehensions with conditionals." },
+                            { day: 4, topic: "OOP Core: Classes, Objects & Attributes", detail: "Implement __init__, instance attributes, class attributes, and method types." },
+                            { day: 5, topic: "OOP Advanced: Inheritance, Encapsulation & Polymorphism", detail: "Apply multiple inheritance, method resolution order (MRO), and private attributes." },
+                            { day: 6, topic: "Iterators, Generators & Function Decorators", detail: "Build custom iterators, generator yield functions, and closure-based decorators." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 2 concepts. Build OOP decorator utilities and practice generator functions.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 3,
+                        title: "Week 3: Python Utilities - Context Managers, Type Hints, Logging & Unit Testing",
+                        days: [
+                            { day: 1, topic: "Context Managers & Exception Handling", detail: "Use try-except-finally blocks, custom exceptions, and contextlib @contextmanager." },
+                            { day: 2, topic: "File Handling, JSON & CSV Parsing", detail: "Manipulate local files, binary streams, JSON structures, and CSV dict readers." },
+                            { day: 3, topic: "Regular Expressions (re module)", detail: "Write regex pattern matchers, search expressions, groups, and string substitutions." },
+                            { day: 4, topic: "Type Hints & Pydantic Dataclasses", detail: "Implement typing module annotations, TypeVar, Union, Optional, and dataclasses." },
+                            { day: 5, topic: "Structured Logging (logging & structlog)", detail: "Configure log handlers, log levels, formatters, and structured JSON logs." },
+                            { day: 6, topic: "Unit Testing (pytest) & Debugging (pdb)", detail: "Write unit tests, fixtures, parametrized tests, and step-through debugging." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 3 concepts. Build a fully tested, logged file-processing module.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 4,
+                        title: "Week 4: Python for Data Science & AI - NumPy & Pandas",
+                        days: [
+                            { day: 1, topic: "NumPy Arrays, Shapes & Vectorization", detail: "Construct N-dimensional arrays, data types, indexing, slicing, and memory layouts." },
+                            { day: 2, topic: "NumPy Array Broadcasting & Matrix Operations", detail: "Apply element-wise vector operations, linear algebra, and array broadcasting rules." },
+                            { day: 3, topic: "Pandas DataFrames, Series & Data Ingestion", detail: "Load tabular data, handle indexes, column operations, and schema introspection." },
+                            { day: 4, topic: "Data Cleaning, Imputation & Transformation", detail: "Handle missing values, duplicate removal, type conversion, and string methods." },
+                            { day: 5, topic: "Pandas GroupBy, Merging & Aggregations", detail: "Perform split-apply-combine logic, multi-index operations, joins, and concats." },
+                            { day: 6, topic: "Exploratory Data Analysis with Matplotlib & Seaborn", detail: "Plot feature distributions, heatmaps, correlation matrices, and boxplots." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 4 concepts. Perform complete EDA and data cleaning on raw dataset.", isWeekend: true }
+                        ]
+                    }
+                ]
+            },
+            {
+                month: 2,
+                title: "Month 2: Machine Learning & Deep Learning Fundamentals",
+                description: "Master Scikit-Learn pipelines, neural networks, PyTorch tensors, backpropagation, and transformer architectures.",
+                weeks: [
+                    {
+                        week: 5,
+                        title: "Week 5: Preprocessing & ML Foundations - Scikit-Learn Pipelines & Evaluation",
+                        days: [
+                            { day: 1, topic: "Train / Validation / Test Split & Data Leakage", detail: "Enforce reproducible data splits and prevent target/feature leakage." },
+                            { day: 2, topic: "Feature Engineering & Preprocessing Scalers", detail: "Apply StandardScaler, MinMaxScaler, OneHotEncoder, and OrdinalEncoder." },
+                            { day: 3, topic: "Supervised Learning: Regression & Classification", detail: "Understand Linear/Logistic Regression, Decision Trees, and Random Forests." },
+                            { day: 4, topic: "Unsupervised Learning: Clustering (K-Means & DBSCAN)", detail: "Perform distance-based clustering, centroid calculation, and silhouette analysis." },
+                            { day: 5, topic: "Model Evaluation Metrics & Cross-Validation", detail: "Evaluate Precision, Recall, F1-score, ROC-AUC, MSE, and Stratified K-Fold." },
+                            { day: 6, topic: "Scikit-Learn Pipelines & Model Serialization", detail: "Build composite ML Pipelines and serialize models using Joblib & Pickle." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 5 concepts. Build an end-to-end ML training and evaluation pipeline.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 6,
+                        title: "Week 6: Deep Learning Foundations - Tensors, Backpropagation & PyTorch",
+                        days: [
+                            { day: 1, topic: "Tensors & PyTorch Tensor Operations", detail: "Create PyTorch tensors, manage GPU device allocation, and reshaping." },
+                            { day: 2, topic: "Neural Network Architecture & Dense Layers", detail: "Understand Artificial Neural Networks, weights, biases, and forward pass logic." },
+                            { day: 3, topic: "Activation Functions (ReLU, Sigmoid, Softmax)", detail: "Analyze non-linearity, vanishing gradients, and layer activation selection." },
+                            { day: 4, topic: "Loss Functions & Gradient Descent Optimizers", detail: "Implement MSE, Cross-Entropy loss, SGD, Adam, and AdamW optimizers." },
+                            { day: 5, topic: "Autograd & Backpropagation Engine", detail: "Trace computational graphs, automatic differentiation, and loss.backward()." },
+                            { day: 6, topic: "Training Loop Implementation in PyTorch", detail: "Write custom PyTorch training loops: zero_grad, backward step, and val loss." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 6 concepts. Train a multi-layer perceptron model from scratch in PyTorch.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 7,
+                        title: "Week 7: Neural Architectures - CNNs, RNNs & Transformers",
+                        days: [
+                            { day: 1, topic: "Convolutional Neural Networks (CNNs)", detail: "Understand 2D convolutions, pooling layers, stride, padding, and feature maps." },
+                            { day: 2, topic: "Recurrent Neural Networks (RNNs) & Sequential Data", detail: "Model temporal sequences, hidden states, and vanishing gradient bottlenecks." },
+                            { day: 3, topic: "LSTMs & GRUs for Sequence Modeling", detail: "Analyze memory cell gates, forget gates, and long-range sequence context." },
+                            { day: 4, topic: "The Attention Mechanism (Bahdanau & Luong)", detail: "Understand query-key-value alignment math and dynamic seq-to-seq weighting." },
+                            { day: 5, topic: "Dense Vector Embeddings & Word2Vec Concepts", detail: "Generate dense semantic vector representations and matrix embeddings." },
+                            { day: 6, topic: "Transformer Core: Encoder-Decoder Breakdown", detail: "Study Attention Is All You Need architecture, self-attention, and residual blocks." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 7 concepts. Write a PyTorch self-attention block implementation.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 8,
+                        title: "Week 8: GenAI Fundamentals - LLMs, Tokens, Embeddings & Quantization",
+                        days: [
+                            { day: 1, topic: "Introduction to Generative AI & Foundation Models", detail: "Understand generative probability distributions and pre-trained LLM paradigms." },
+                            { day: 2, topic: "Tokens & Tokenization (BPE, WordPiece, SentencePiece)", detail: "Master Byte-Pair Encoding, token-to-text conversion, and vocabulary limits." },
+                            { day: 3, topic: "Tiktoken & Context Window Mechanics", detail: "Calculate token usage, count costs, and manage context window boundaries." },
+                            { day: 4, topic: "Dense Embeddings & Semantic Vector Space", detail: "Generate vector embeddings and calculate high-dimensional spatial distances." },
+                            { day: 5, topic: "Sampling Parameters: Temperature, Top-k & Top-p", detail: "Control generation variance, nucleus sampling, and tail probability cutoff." },
+                            { day: 6, topic: "Model Quantization Concepts (INT8, FP16, GGUF)", detail: "Understand weight precision reduction, VRAM footprints, and quantization loss." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 8 concepts. Build a token counter & context cost estimation CLI tool.", isWeekend: true }
+                        ]
+                    }
+                ]
+            },
+            {
+                month: 3,
+                title: "Month 3: LLM Architecture, Prompt Engineering & Application Development",
+                description: "Master Transformer self-attention, instruction tuning, prompt design, async Python, and FastAPI LLM streaming.",
+                weeks: [
+                    {
+                        week: 9,
+                        title: "Week 9: LLM Architecture & Training - Self-Attention, Fine-Tuning & Quantization",
+                        days: [
+                            { day: 1, topic: "Self-Attention Math & Multi-Head Attention", detail: "Calculate Scaled Dot-Product Attention: Softmax(QK^T / sqrt(d_k))V." },
+                            { day: 2, topic: "Positional Encodings (RoPE & Sinusoidal)", detail: "Understand how spatial sequence order is preserved without recurrent loops." },
+                            { day: 3, topic: "Pretraining vs Instruction Tuning vs RLHF", detail: "Understand causal language modeling, SFT, and alignment via DPO/PPO." },
+                            { day: 4, topic: "Structured Output & Function/Tool Calling Protocols", detail: "Understand JSON schemas, constrained decoding, and tool calling signatures." },
+                            { day: 5, topic: "Hallucination Root Causes & Mitigation", detail: "Analyze grounding failure modes, epistemic uncertainty, and fact verification." },
+                            { day: 6, topic: "Model Distillation & Quantization Trade-offs", detail: "Compare student-teacher distillation models and quantized local inference speed." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 9 concepts. Build a pure Python self-attention simulation.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 10,
+                        title: "Week 10: Prompt Engineering - Zero/Few-shot, CoT, System Messages & Guardrails",
+                        days: [
+                            { day: 1, topic: "System, User & Assistant Message Formatting", detail: "Structure multi-turn chat role contexts and enforce strict instruction boundaries." },
+                            { day: 2, topic: "Zero-Shot & Few-Shot Prompting Patterns", detail: "Design contextual examplars and in-context learning task formats." },
+                            { day: 3, topic: "Chain-of-Thought (CoT) & Reasoning Prompts", detail: "Implement step-by-step reasoning prompts and XML structured thinking tags." },
+                            { day: 4, topic: "Prompt Chaining & Self-Consistency", detail: "Chain multi-stage prompt steps and implement majority-vote consistency filters." },
+                            { day: 5, topic: "Output Constraints & XML/JSON Prompting", detail: "Enforce deterministic schema formats via rigid structural prompt tags." },
+                            { day: 6, topic: "Prompt Evaluation & Guardrail Protocols", detail: "Evaluate prompt robustness, edge-case failure modes, and response safety." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 10 concepts. Build an automated prompt testing framework in Python.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 11,
+                        title: "Week 11: LLM Application Dev - Model APIs, Async Python & FastAPI Streaming",
+                        days: [
+                            { day: 1, topic: "OpenAI & Provider APIs (LiteLLM Integration)", detail: "Query multi-provider API endpoints using standardized Python client SDKs." },
+                            { day: 2, topic: "Asynchronous Python for LLM Calls (asyncio & httpx)", detail: "Execute parallel API calls with non-blocking async loops and rate limiters." },
+                            { day: 3, topic: "Streaming LLM Responses via Server-Sent Events (SSE)", detail: "Stream token completion payloads in real-time using async generators." },
+                            { day: 4, topic: "Conversation Memory & Context Management", detail: "Implement sliding window chat history buffers and message truncation logic." },
+                            { day: 5, topic: "FastAPI REST Endpoints for AI Services", detail: "Expose async FastAPI endpoints with Pydantic request and response schemas." },
+                            { day: 6, topic: "WebSockets for Real-Time Chat Applications", detail: "Build bi-directional WebSocket servers for interactive streaming conversations." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 11 concepts. Build a full streaming FastAPI backend for chat.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 12,
+                        title: "Week 12: RAG Foundations - Document Loaders, Chunking & Embeddings",
+                        days: [
+                            { day: 1, topic: "RAG Architecture Overview & Data Ingestion", detail: "Understand the end-to-end RAG workflow: Ingestion -> Chunking -> Vector Search -> Context." },
+                            { day: 2, topic: "Document Loaders & Text Extraction (PDFs, HTML, Markdown)", detail: "Parse unstructured data using PyPDF, BeautifulSoup, and Markdown extractors." },
+                            { day: 3, topic: "Text Chunking Strategies: Fixed Size vs Sentence vs Recursive", detail: "Compare token chunk sizes, line break boundaries, and recursive splitting rules." },
+                            { day: 4, topic: "Semantic Chunking & Chunk Overlap Math", detail: "Implement chunk overlap buffers and embedding shift semantic boundaries." },
+                            { day: 5, topic: "Generating Vector Embeddings at Scale", detail: "Batch generate text embeddings using local SentenceTransformers & API models." },
+                            { day: 6, topic: "Grounding Generation & Basic RAG Prompt Setup", detail: "Construct context-injected system prompts that force grounded factual answers." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 12 concepts. Build an in-memory document ingestion pipeline.", isWeekend: true }
+                        ]
+                    }
+                ]
+            },
+            {
+                month: 4,
+                title: "Month 4: Vector Databases, Advanced RAG & AI Frameworks",
+                description: "Master vector search indexing, hybrid retrieval, reranking, LangChain, LlamaIndex, and Pydantic validation.",
+                weeks: [
+                    {
+                        week: 13,
+                        title: "Week 13: Vector Databases & Similarity Search - FAISS, Chroma, Pinecone, Qdrant",
+                        days: [
+                            { day: 1, topic: "Vector Search Math: Cosine Similarity & Dot Product", detail: "Compute angular distance, L2 Euclidean norm, and normalized inner products." },
+                            { day: 2, topic: "Approximate Nearest-Neighbor Search (HNSW & IVF)", detail: "Understand Hierarchical Navigable Small World graphs and inverted file indexes." },
+                            { day: 3, topic: "FAISS Index Setup & Querying", detail: "Build CPU/GPU FAISS indexes for lightning-fast similarity lookup." },
+                            { day: 4, topic: "Chroma & Qdrant Local Vector Databases", detail: "Store vectors, metadata payloads, and perform boolean filter queries." },
+                            { day: 5, topic: "Pinecone Cloud Managed Vector Indexing", detail: "Deploy serverless vector collections, namespaces, and cloud query pipelines." },
+                            { day: 6, topic: "Metadata Indexing & Filtered Search", detail: "Combine high-dimensional vector search with strict relational metadata filters." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 13 concepts. Benchmark FAISS vs Chroma search query speeds.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 14,
+                        title: "Week 14: Advanced RAG - Hybrid Search, Reranking & Query Transformation",
+                        days: [
+                            { day: 1, topic: "Hybrid Search: Dense Vectors + BM25 Sparse Search", detail: "Combine neural semantic search with keyword BM25 term matching." },
+                            { day: 2, topic: "Reciprocal Rank Fusion (RRF)", detail: "Merge multiple ranked retrieval lists using reciprocal rank scores." },
+                            { day: 3, topic: "Re-Ranking with Cross-Encoders (Cohere / FlashRank)", detail: "Pass retrieved candidate chunks through precision Cross-Encoder models." },
+                            { day: 4, topic: "Query Transformation & Multi-Query Expansion", detail: "Decompose complex questions and generate multi-perspective sub-queries." },
+                            { day: 5, topic: "Parent-Document & Sentence-Window Retrieval", detail: "Retrieve small focus sentences while passing full parent paragraph context." },
+                            { day: 6, topic: "RAG Evaluation (Ragas Metric Suite)", detail: "Measure Context Recall, Faithfulness, Answer Relevance, and Groundedness." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 14 concepts. Build an Advanced RAG Pipeline with HyDE & Reranking.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 15,
+                        title: "Week 15: AI Frameworks - LangChain, LlamaIndex, Pydantic & LiteLLM",
+                        days: [
+                            { day: 1, topic: "Pydantic V2 Models & Data Validation", detail: "Enforce strict runtime data validation, custom field validators, and schemas." },
+                            { day: 2, topic: "LangChain Core & LCEL (LangChain Expression Language)", detail: "Master pipe syntax (`prompt | model | parser`) for composable chains." },
+                            { day: 3, topic: "LangChain Chains, Memory & Tools", detail: "Combine retrieval chains, history memory stores, and callable tools." },
+                            { day: 4, topic: "LlamaIndex Core, Documents & Node Parsers", detail: "Construct data connectors, index storage contexts, and customized nodes." },
+                            { day: 5, topic: "LlamaIndex Query Engines & Sub-Question Decomposition", detail: "Query multi-document indexes using sub-question planning engines." },
+                            { day: 6, topic: "LiteLLM Unified Model Gateway & DSPy Concepts", detail: "Standardize API interfaces across models and explore prompt compilation." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 15 concepts. Build matching chains in both LangChain and LlamaIndex.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 16,
+                        title: "Week 16: Agentic AI Core - Agent Architecture, State, Planning & Reasoning",
+                        days: [
+                            { day: 1, topic: "What is an AI Agent? (Agent vs Chatbot vs Workflow)", detail: "Understand autonomous loops, environment feedback, goals, and agency." },
+                            { day: 2, topic: "Core Agent Cycle: Reason -> Plan -> Tool -> Observe", detail: "Trace state loops, tool invocation, observation intake, and next-action selection." },
+                            { day: 3, topic: "Agent State Representation & Management", detail: "Design immutable state schemas, working memory, and dynamic context updates." },
+                            { day: 4, topic: "Planning Strategies & Task Decomposition", detail: "Break complex multi-step objectives down into manageable sub-task sequences." },
+                            { day: 5, topic: "Decision Making, Reflection & Replanning Loops", detail: "Evaluate tool outputs, detect failure states, and adjust plans dynamically." },
+                            { day: 6, topic: "Human-In-The-Loop (HITL) Interruption Mechanics", detail: "Pause autonomous execution loops for human approval on high-risk tools." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 16 concepts. Build a pure Python ReAct agent without frameworks.", isWeekend: true }
+                        ]
+                    }
+                ]
+            },
+            {
+                month: 5,
+                title: "Month 5: Agentic Tools, Workflows, Multi-Agent Systems & Security",
+                description: "Master function schemas, agent memory stores, LangGraph state graph workflows, CrewAI, AutoGen, MCP, and AI safety.",
+                weeks: [
+                    {
+                        week: 17,
+                        title: "Week 17: Tools & Function Calling - Schemas, Code Execution & Custom Tools",
+                        days: [
+                            { day: 1, topic: "Tool Definitions & JSON Function Schemas", detail: "Define strict OpenAPI/JSON schemas describing tool names, parameters, and types." },
+                            { day: 2, topic: "Tool Selection, Argument Parsing & Validation", detail: "Parse model tool calls, validate argument types, and handle malformed parameters." },
+                            { day: 3, topic: "API & Database Tools (SQL Query Execution)", detail: "Connect agents safely to REST APIs and SQL databases for live data retrieval." },
+                            { day: 4, topic: "Code Execution Tools & Sandboxed Execution", detail: "Execute Python code safely in isolated process sub-shells or Docker containers." },
+                            { day: 5, topic: "File System & Web Browser Search Tools", detail: "Equip agents with file reading/writing tools and live search scrapers." },
+                            { day: 6, topic: "Custom Python Tool Decorators & Validation", detail: "Create reusable Python tools with typed docstrings and automatic schema generation." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 17 concepts. Build a suite of 5 custom tools with validation.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 18,
+                        title: "Week 18: Agent Memory - Episodic, Semantic, Vector & SQL Memory",
+                        days: [
+                            { day: 1, topic: "Memory Taxonomy: Short-Term vs Long-Term Memory", detail: "Distinguish runtime conversation buffers from persistent historical knowledge." },
+                            { day: 2, topic: "Episodic Memory & Interaction History", detail: "Log past trajectories, decision steps, and past problem-solving attempts." },
+                            { day: 3, topic: "Semantic Memory & Vector-Based Long-Term Storage", detail: "Store user preferences and domain facts in searchable vector memory stores." },
+                            { day: 4, topic: "SQL-Based Structured Memory & Entity Store", detail: "Track key-value facts and relational entities in persistent SQLite/PostgreSQL." },
+                            { day: 5, topic: "Memory Retrieval, Summarization & Compression", detail: "Compress lengthy histories into concise summaries before context overflow." },
+                            { day: 6, topic: "Memory Expiration & Forgetting Protocols", detail: "Implement decay rates and relevance thresholds for dynamic memory pruning." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 18 concepts. Build a dual-layer Vector + SQL memory system.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 19,
+                        title: "Week 19: Agent Workflows - Sequential, Routing, Parallel & State Machines",
+                        days: [
+                            { day: 1, topic: "Sequential Workflows & Pipeline Chaining", detail: "Execute deterministic linear sequences of agent tasks with typed outputs." },
+                            { day: 2, topic: "Routing & Conditional Branching", detail: "Classify inputs to route tasks dynamically to specialized agent sub-graphs." },
+                            { day: 3, topic: "Parallel Agent Workflows & Concurrency", detail: "Run independent agent sub-tasks in parallel and aggregate their results." },
+                            { day: 4, topic: "LangGraph State Machines & Graph Setup", detail: "Construct stateful node graphs with explicit State schemas and transitions." },
+                            { day: 5, topic: "Graph Checkpointing & State Persistence", detail: "Save state snapshots per thread_id for state rewind and time-travel debugging." },
+                            { day: 6, topic: "Event-Driven Workflows & Loop Recoveries", detail: "Handle event triggers, error retries, and fallback branches in graph state." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 19 concepts. Build a LangGraph state machine with persistent checkpointers.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 20,
+                        title: "Week 20: Multi-Agent Systems - Supervisor, Worker Agents & Communication",
+                        days: [
+                            { day: 1, topic: "Single-Agent Limits vs Multi-Agent Specialization", detail: "Understand context bloat limits and benefits of modular specialized roles." },
+                            { day: 2, topic: "Supervisor Agent & Orchestrator Design Pattern", detail: "Build central supervisor agents that delegate sub-tasks to worker agents." },
+                            { day: 3, topic: "Worker Agent Roles (Researcher, Coder, Reviewer, Critic)", detail: "Define specialized system prompts, backstories, and tools for worker agents." },
+                            { day: 4, topic: "Multi-Agent Systems with CrewAI", detail: "Configure Agents, Tasks, and Crews with sequential or hierarchical processes." },
+                            { day: 5, topic: "AutoGen Group Chat & Multi-Agent Conversations", detail: "Orchestrate agent discussions, speaker selection, and code execution loops." },
+                            { day: 6, topic: "Agent Communication, Shared State & Conflict Resolution", detail: "Pass messages between agents and resolve conflicting agent recommendations." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 20 concepts. Build a 3-agent research team in CrewAI or LangGraph.", isWeekend: true }
+                        ]
+                    }
+                ]
+            },
+            {
+                month: 6,
+                title: "Month 6: Advanced Agentic AI, Safety, Evaluation & Production MLOps",
+                description: "Master Model Context Protocol (MCP), reflection, prompt security, Ragas eval, Docker, tracing, and cloud deployment.",
+                weeks: [
+                    {
+                        week: 21,
+                        title: "Week 21: Advanced Agentic AI & MCP - ReAct, Reflection & Model Context Protocol",
+                        days: [
+                            { day: 1, topic: "ReAct & Plan-and-Execute Agent Patterns", detail: "Compare continuous ReAct loops with up-front plan-and-execute architectures." },
+                            { day: 2, topic: "Reflection, Self-Correction & Critique Loops", detail: "Implement critic nodes that audit agent outputs and force correction loops." },
+                            { day: 3, topic: "Model Context Protocol (MCP) Core Specification", detail: "Understand Anthropic's open standard unifying tool and context server connections." },
+                            { day: 4, topic: "Building an MCP Server in Python", detail: "Define MCP Tools, Resources, and Prompts using standard Python mcp library." },
+                            { day: 5, topic: "Building an MCP Client Agent", detail: "Connect custom Python agents dynamically to remote or local MCP tool servers." },
+                            { day: 6, topic: "Agentic RAG & Adaptive Planning Systems", detail: "Combine retrieval actions inside dynamic agent planning decision trees." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 21 concepts. Build a custom MCP Server providing database tools.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 22,
+                        title: "Week 22: AI Safety, Security & Guardrails - Prompt Injection & Sandboxing",
+                        days: [
+                            { day: 1, topic: "Prompt Injection: Direct Jailbreaks & Indirect Attacks", detail: "Analyze adversarial prompt payloads, delimiter bypasses, and data poisoning." },
+                            { day: 2, topic: "PII Protection & Data Redaction (Microsoft Presidio)", detail: "Redact sensitive personal data (emails, SSNs, keys) before LLM prompt submission." },
+                            { day: 3, topic: "NeMo Guardrails & Input/Output Filtering", detail: "Enforce safety rails, topical boundaries, and content moderation rules." },
+                            { day: 4, topic: "Tool Permission Control & Execution Sandboxing", detail: "Restrict tool permissions, mandate authorization tokens, and sandbox runtime." },
+                            { day: 5, topic: "Input / Output Validation & Secure Tool Execution", detail: "Validate all model parameters before calling system tools or database scripts." },
+                            { day: 6, topic: "Audit Logs & Security Monitoring", detail: "Maintain immutable audit logs of agent actions, system calls, and tool parameters." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 22 concepts. Build a security middleware layer with PII redaction.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 23,
+                        title: "Week 23: LLM & Agent Evaluation - Ragas, Faithfulness & Agent Trajectories",
+                        days: [
+                            { day: 1, topic: "Evaluation Taxonomy: Groundedness, Faithfulness & Hallucination Rate", detail: "Understand quantitative evaluation metrics for generated answers and retrieval." },
+                            { day: 2, topic: "LLM-as-a-Judge Evaluation Frameworks", detail: "Use judge models with structured evaluation rubrics to score model outputs." },
+                            { day: 3, topic: "Retrieval Metrics: Precision, Recall & F1 Score", detail: "Evaluate vector search quality against annotated ground truth benchmark sets." },
+                            { day: 4, topic: "Agent Trajectory Evaluation & Tool Call Accuracy", detail: "Assess step efficiency, tool selection accuracy, and loop redundancy." },
+                            { day: 5, topic: "Benchmarking Suite & Automated Regression Testing", detail: "Run automated test suites to prevent performance regressions across prompt iterations." },
+                            { day: 6, topic: "Ragas Automated Dataset Generation", detail: "Generate synthetic test questions and ground-truth pairs from custom documents." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Concept Mastery", detail: "Synthesize Week 23 concepts. Build an automated evaluation suite for custom RAG.", isWeekend: true }
+                        ]
+                    },
+                    {
+                        week: 24,
+                        title: "Week 24: Production AI & MLOps - Docker, Observability, Tracing & Deployment",
+                        days: [
+                            { day: 1, topic: "Dockerizing AI Microservices & Vector DBs", detail: "Write Dockerfiles and docker-compose configurations for FastAPI and vector stores." },
+                            { day: 2, topic: "LLM Observability & Tracing (LangSmith, Phoenix, Arize)", detail: "Instrument applications to trace token counts, latency breakdowns, and chain calls." },
+                            { day: 3, topic: "Token & Cost Monitoring Protocols", detail: "Track API spending, setup token budget alerts, and optimize model routing." },
+                            { day: 4, topic: "Semantic Caching with Redis Vector Store", detail: "Cache repeated LLM queries using vector similarity lookups to reduce API costs." },
+                            { day: 5, topic: "Cloud Deployment (AWS / GCP / Render) & CI/CD Pipelines", detail: "Deploy containerized AI services to cloud environments with automated testing." },
+                            { day: 6, topic: "Portfolio Capstone Review & Final README Architecture", detail: "Finalize GitHub repository documentation, architecture diagrams, and test suite." },
+                            { day: 7, topic: "Weekend Revision, Code Synthesis & Graduation Masterclass", detail: "Complete final graduation review, sign off all 24 weeks, and launch portfolio!", isWeekend: true }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        const STORAGE_KEY = "genai_agentic_roadmap_persistence_v24_complete";
+        let completedTasks = new Set();
+        let currentFilter = "all";
+        let searchQuery = "";
+        let activeMonthTab = 1;
+
+        // Load progress from localStorage safely
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    if (Array.isArray(parsed)) {
+                        completedTasks = new Set(parsed);
+                    }
+                }
+            } catch (e) {
+                console.error("Failed to load progress from localStorage", e);
+            }
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(completedTasks)));
+            } catch (e) {
+                console.error("Failed to save progress to localStorage", e);
+            }
+            updateMetrics();
+        }
+
+        // Helper to generate unique task ID
+        function getTaskId(month, week, day) {
+            return `m${month}_w${week}_d${day}`;
+        }
+
+        // Get total count of all daily tasks across 24 weeks
+        function getTotalTasksCount() {
+            let count = 0;
+            curriculumData.forEach(m => {
+                m.weeks.forEach(w => {
+                    count += w.days.length;
+                });
+            });
+            return count;
+        }
+
+        function updateMetrics() {
+            const totalTasks = getTotalTasksCount();
+            const completedCount = completedTasks.size;
+            const percentage = totalTasks > 0 ? Math.round((completedCount / totalTasks) * 100) : 0;
+
+            document.getElementById('overallPercentage').textContent = `${percentage}%`;
+            document.getElementById('overallProgressBar').style.width = `${percentage}%`;
+            document.getElementById('completedTasksCount').textContent = completedCount;
+            document.getElementById('totalTasksCount').textContent = totalTasks;
+
+            // Weekend Revisions Done
+            let completedWeekends = 0;
+            curriculumData.forEach(m => {
+                m.weeks.forEach(w => {
+                    w.days.forEach(d => {
+                        if (d.isWeekend && completedTasks.has(getTaskId(m.month, w.week, d.day))) {
+                            completedWeekends++;
+                        }
+                    });
+                });
+            });
+            document.getElementById('weekendRevisionCounter').textContent = `${completedWeekends} / 24 Weekend Revisions`;
+
+            // Active Target calculation
+            let foundCurrent = false;
+            for (const month of curriculumData) {
+                for (const week of month.weeks) {
+                    for (const day of week.days) {
+                        const taskId = getTaskId(month.month, week.week, day.day);
+                        if (!completedTasks.has(taskId)) {
+                            document.getElementById('currentFocusTitle').textContent = `Month ${month.month}: ${month.title.split(':')[1] || month.title}`;
+                            document.getElementById('activeWeekSub').textContent = `Week ${week.week}: ${day.topic}`;
+                            foundCurrent = true;
+                            break;
+                        }
+                    }
+                    if (foundCurrent) break;
+                }
+                if (foundCurrent) break;
+            }
+
+            if (!foundCurrent && totalTasks > 0) {
+                document.getElementById('currentFocusTitle').textContent = "🎉 Masterclass Complete!";
+                document.getElementById('activeWeekSub').textContent = "You have completed all 24 weeks!";
+            }
+        }
+
+        // Render Month Navigation Tabs
+        function renderMonthTabs() {
+            const container = document.getElementById('monthTabsNav');
+            container.innerHTML = "";
+
+            curriculumData.forEach(m => {
+                const btn = document.createElement('button');
+                btn.className = `px-4 py-2 text-xs font-semibold rounded-xl transition whitespace-nowrap flex items-center gap-2 border ${
+                    activeMonthTab === m.month
+                        ? 'bg-emerald-500 text-white border-emerald-500 shadow-md shadow-emerald-500/20'
+                        : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`;
+                btn.innerHTML = `<span class="w-5 h-5 rounded-full bg-slate-200/50 dark:bg-slate-700/50 flex items-center justify-center text-[10px] font-bold">${m.month}</span> Month ${m.month}`;
+                btn.onclick = () => {
+                    activeMonthTab = m.month;
+                    renderMonthTabs();
+                    renderCurriculum();
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        // Helper to compute Month stats string
+        function getMonthProgressText(month) {
+            let total = 0;
+            let done = 0;
+            month.weeks.forEach(w => {
+                w.days.forEach(d => {
+                    total++;
+                    if (completedTasks.has(getTaskId(month.month, w.week, d.day))) done++;
+                });
+            });
+            return `${done} / ${total} Done (${total > 0 ? Math.round((done/total)*100) : 0}%)`;
+        }
+
+        function renderCurriculum() {
+            const container = document.getElementById('curriculumContainer');
+            container.innerHTML = "";
+
+            const month = curriculumData.find(m => m.month === activeMonthTab);
+            if (!month) return;
+
+            // Month Banner Card
+            const monthHeader = document.createElement('div');
+            monthHeader.className = "glass-panel p-6 rounded-2xl border-l-4 border-l-emerald-500 shadow-sm";
+            monthHeader.innerHTML = `
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Month ${month.month} Syllabus</span>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">${month.title}</h2>
+                    </div>
+                    <div class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/80">
+                        ${getMonthProgressText(month)}
+                    </div>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">${month.description}</p>
+            `;
+            container.appendChild(monthHeader);
+
+            // Render Weeks
+            month.weeks.forEach(week => {
+                const weekCard = document.createElement('div');
+                weekCard.className = "week-card glass-panel rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm transition";
+
+                // Week calculation
+                const totalWeekTasks = week.days.length;
+                let completedWeekTasks = 0;
+                week.days.forEach(d => {
+                    if (completedTasks.has(getTaskId(month.month, week.week, d.day))) completedWeekTasks++;
+                });
+                const weekPct = Math.round((completedWeekTasks / totalWeekTasks) * 100);
+
+                const weekHeader = document.createElement('div');
+                weekHeader.className = "p-4 sm:p-5 bg-slate-100/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between cursor-pointer select-none";
+                weekHeader.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-xs border border-indigo-200 dark:border-indigo-800">
+                            W${week.week}
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white">${week.title}</h3>
+                            <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">${completedWeekTasks} / ${totalWeekTasks} Daily Modules Completed</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full ${weekPct === 100 ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800' : 'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300'}">
+                            ${weekPct}%
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200 accordion-arrow"></i>
+                    </div>
+                `;
+
+                const weekContent = document.createElement('div');
+                weekContent.className = "week-content p-4 sm:p-5 space-y-3 bg-white/40 dark:bg-slate-950/40";
+
+                let hasVisibleDays = false;
+
+                week.days.forEach(day => {
+                    const taskId = getTaskId(month.month, week.week, day.day);
+                    const isCompleted = completedTasks.has(taskId);
+
+                    // Filters
+                    if (currentFilter === "completed" && !isCompleted) return;
+                    if (currentFilter === "pending" && isCompleted) return;
+                    if (currentFilter === "weekend" && !day.isWeekend) return;
+
+                    // Search Query Filter
+                    if (searchQuery.trim() !== "") {
+                        const q = searchQuery.toLowerCase();
+                        const match = day.topic.toLowerCase().includes(q) || day.detail.toLowerCase().includes(q);
+                        if (!match) return;
+                    }
+
+                    hasVisibleDays = true;
+
+                    const dayRow = document.createElement('div');
+                    dayRow.className = `p-3.5 rounded-xl border transition flex items-start gap-3.5 ${
+                        isCompleted 
+                            ? 'completed-card' 
+                            : day.isWeekend
+                                ? 'bg-amber-50/70 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800/40'
+                                : 'bg-white dark:bg-slate-900/90 border-slate-200/80 dark:border-slate-800'
+                    }`;
+
+                    dayRow.innerHTML = `
+                        <div class="pt-0.5">
+                            <input type="checkbox" id="${taskId}" ${isCompleted ? 'checked' : ''} 
+                                class="w-4 h-4 rounded border-slate-300 dark:border-slate-700 text-emerald-600 focus:ring-emerald-500 cursor-pointer transition">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-[11px] font-bold px-2 py-0.5 rounded ${
+                                    isCompleted
+                                        ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300'
+                                        : day.isWeekend 
+                                            ? 'bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300' 
+                                            : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
+                                }">
+                                    ${isCompleted ? '✓ Done' : `Day ${day.day}`}${day.isWeekend && !isCompleted ? ' ★ Revision' : ''}
+                                </span>
+                                <label for="${taskId}" class="font-semibold text-xs sm:text-sm text-slate-900 dark:text-slate-100 cursor-pointer ${isCompleted ? 'line-through text-slate-500 dark:text-slate-400' : ''}">
+                                    ${day.topic}
+                                </label>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">${day.detail}</p>
+                        </div>
+                    `;
+
+                    // Checkbox Event Handler with Storage Persistence
+                    const checkbox = dayRow.querySelector('input[type="checkbox"]');
+                    checkbox.addEventListener('change', (e) => {
+                        if (e.target.checked) {
+                            completedTasks.add(taskId);
+                        } else {
+                            completedTasks.delete(taskId);
+                        }
+                        saveProgress();
+                        renderCurriculum();
+                    });
+
+                    weekContent.appendChild(dayRow);
+                });
+
+                if (!hasVisibleDays) {
+                    const emptyMsg = document.createElement('div');
+                    emptyMsg.className = "text-xs text-slate-400 dark:text-slate-500 italic py-2 text-center";
+                    emptyMsg.textContent = "No topics match the selected search/filter criteria in this week.";
+                    weekContent.appendChild(emptyMsg);
+                }
+
+                // Accordion Toggle Logic
+                weekHeader.onclick = () => {
+                    const isHidden = weekContent.classList.contains('hidden');
+                    if (isHidden) {
+                        weekContent.classList.remove('hidden');
+                        weekHeader.querySelector('.accordion-arrow').style.transform = 'rotate(0deg)';
+                    } else {
+                        weekContent.classList.add('hidden');
+                        weekHeader.querySelector('.accordion-arrow').style.transform = 'rotate(-90deg)';
+                    }
+                };
+
+                weekCard.appendChild(weekHeader);
+                weekCard.appendChild(weekContent);
+                container.appendChild(weekCard);
+            });
+        }
+
+        // Filter Tabs
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-emerald-500', 'text-white');
+                    b.classList.add('text-slate-600', 'dark:text-slate-300');
+                });
+                btn.classList.remove('text-slate-600', 'dark:text-slate-300');
+                btn.classList.add('bg-emerald-500', 'text-white');
+
+                currentFilter = btn.getAttribute('data-filter');
+                renderCurriculum();
+            });
+        });
+
+        // Search Input
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderCurriculum();
+        });
+
+        // Expand / Collapse All Controls
+        document.getElementById('expandAllBtn').addEventListener('click', () => {
+            document.querySelectorAll('.week-content').forEach(el => el.classList.remove('hidden'));
+            document.querySelectorAll('.accordion-arrow').forEach(el => el.style.transform = 'rotate(0deg)');
+        });
+
+        document.getElementById('collapseAllBtn').addEventListener('click', () => {
+            document.querySelectorAll('.week-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.accordion-arrow').forEach(el => el.style.transform = 'rotate(-90deg)');
+        });
+
+        // Theme Toggle
+        document.getElementById('themeToggleBtn').addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Reset Data
+        document.getElementById('resetProgressBtn').addEventListener('click', () => {
+            if (confirm("Are you sure you want to reset all stored progress? This action will clear your local checkmarks.")) {
+                completedTasks.clear();
+                saveProgress();
+                renderCurriculum();
+            }
+        });
+
+        // Snippet Modal Controls
+        const snippetModal = document.getElementById('snippetModal');
+        document.getElementById('snippetModalBtn').onclick = () => snippetModal.classList.remove('opacity-0', 'pointer-events-none');
+        document.getElementById('closeSnippetModal').onclick = () => snippetModal.classList.add('opacity-0', 'pointer-events-none');
+
+        // Export Modal Controls
+        const exportModal = document.getElementById('exportModal');
+        document.getElementById('exportModalBtn').onclick = () => exportModal.classList.remove('opacity-0', 'pointer-events-none');
+        document.getElementById('closeExportModal').onclick = () => exportModal.classList.add('opacity-0', 'pointer-events-none');
+
+        // Download JSON Backup
+        document.getElementById('downloadJsonBtn').onclick = () => {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(Array.from(completedTasks)));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", `genai_agentic_roadmap_progress_${new Date().toISOString().slice(0,10)}.json`);
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        };
+
+        // Restore JSON Backup
+        document.getElementById('importJsonInput').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const loadedArray = JSON.parse(event.target.result);
+                    if (Array.isArray(loadedArray)) {
+                        completedTasks = new Set(loadedArray);
+                        saveProgress();
+                        renderCurriculum();
+                        exportModal.classList.add('opacity-0', 'pointer-events-none');
+                        alert("Roadmap progress successfully restored!");
+                    }
+                } catch (err) {
+                    alert("Invalid JSON file format.");
+                }
+            };
+            reader.readAsText(file);
+        });
+
+        // Application Onload Initialization
+        window.onload = () => {
+            loadProgress();
+            updateMetrics();
+            renderMonthTabs();
+            renderCurriculum();
+        };
+    </script>
+</body>
+</html>
